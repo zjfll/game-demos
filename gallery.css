@@ -1,0 +1,31 @@
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: #202923; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+a { color: inherit; text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid #bd5423; outline-offset: 5px; }
+.container { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.skip { position: absolute; left: 16px; top: -80px; padding: 12px; background: #fff; z-index: 2; }
+.skip:focus { top: 12px; }
+.site-header { border-bottom: 1px solid #dce2de; }
+.header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.site-name { font-weight: 700; font-size: 18px; text-decoration: none; }
+.repo-link { font-size: 14px; color: #506159; }
+.collection-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; padding: 46px 0 26px; }
+h1 { margin: 0; font-size: 30px; line-height: 1.4; }
+.collection-heading p { margin: 0; color: #657269; font-size: 14px; }
+.game-entry { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr); gap: 36px; border-top: 2px solid #202923; border-bottom: 1px solid #dce2de; padding: 28px 0; }
+.preview { display: block; align-self: start; background: #edf3ef; }
+.preview img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+.game-id { font-size: 12px; color: #68796f; margin: 0 0 8px; }
+h2 { margin: 0; font-size: 26px; line-height: 1.4; }
+.description { font-size: 15px; line-height: 1.8; margin: 14px 0 20px; }
+.game-facts { margin: 0 0 24px; font-size: 13px; line-height: 1.7; }
+.game-facts div { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 8px; margin: 6px 0; }
+dt { color: #68796f; } dd { margin: 0; }
+.play-link { min-height: 46px; display: inline-flex; justify-content: space-between; align-items: center; gap: 32px; background: #006b5c; color: #fff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 15px; font-weight: 600; }
+.play-link:hover { background: #004e43; }
+.download-link { display: inline-block; margin: 16px 0 0 16px; font-size: 13px; color: #506159; }
+.site-footer { padding: 28px 0; font-size: 12px; color: #68796f; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+@media (max-width: 850px) { .game-entry { grid-template-columns: 1fr; gap: 24px; } .game-details { max-width: 600px; } }
+@media (max-width: 480px) { .container { width: calc(100% - 32px); } .header-inner { min-height: 64px; } .collection-heading { padding-top: 30px; } h1 { font-size: 26px; } h2 { font-size: 24px; } .game-entry { padding-top: 20px; } }
