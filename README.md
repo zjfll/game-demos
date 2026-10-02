@@ -1,8 +1,8 @@
 # 游戏 Demo 集
 
-收录经过试玩筛选的游戏原型。目前首批为 1902《接力扫弧》。
+收录作者选入的游戏原型，目前包含 1902《接力扫弧》、1903《兜弹》和 1904《共弦》。
 
-[在线试玩](https://zjfll.github.io/game-demos/) · [直接进入接力扫弧](https://zjfll.github.io/game-demos/games/1902/)
+[合集试玩](https://zjfll.github.io/game-demos/) · [接力扫弧](https://zjfll.github.io/game-demos/games/1902/) · [兜弹](https://zjfll.github.io/game-demos/games/1903/) · [共弦](https://zjfll.github.io/game-demos/games/1904/)
 
 ![接力扫弧实机画面](assets/sweep-relay.png)
 
@@ -16,14 +16,38 @@
 - 支持电脑、手机；首次进入有教学提示，同局面可以重试。
 - 游戏进度仅保存在当前浏览器，不上传游戏数据。
 
+## 兜弹 · 1903
+
+弹带接住落下的球，拖动同一个把手改变几条球路，松手一起发射。
+
+- 同时最多接 4 颗球；一发命中更多圆环，分数更高。
+- 包含一球、两球热身，90 秒标准局及不限时练习。
+- 鼠标、键盘和触摸可操作；重试保留目标及来球顺序。
+- [在线试玩](https://zjfll.github.io/game-demos/games/1903/) · [离线包](downloads/curve-volley-1903.zip)
+
+![兜弹实机画面](assets/curve-volley.png)
+
+## 共弦 · 1904
+
+三颗珠共用一个拉点，朝各自远离拉点的方向弹出。每拨停在哪里，会影响下一拨。
+
+- 4 次机会穿过 12 个空心圆环；墙和实心圆会反弹。
+- 六个固定盘面，包含基础、借墙、交叉和留位。
+- 鼠标、键盘和触摸可操作；同盘重试保留初始布局。
+- [在线试玩](https://zjfll.github.io/game-demos/games/1904/) · [离线包](downloads/chordflick-1904.zip)
+
+![共弦实机画面](assets/chordflick.png)
+
 ## 离线试玩
 
-下载 [离线包](downloads/sweep-relay-1902.zip)，解压后打开 `1902/index.html`。也可下载本仓库，打开首页 `index.html`。无需安装或构建。
+下载各游戏的离线包，解压后打开对应编号文件夹内的 `index.html`：[1902](downloads/sweep-relay-1902.zip)、[1903](downloads/curve-volley-1903.zip)、[1904](downloads/chordflick-1904.zip)。也可下载本仓库，打开首页 `index.html`。无需安装或构建。
+
+游戏数据仅保存在当前浏览器，不自动上传。两个新增 Demo 已有规则及浏览器自动检查，真实新人理解和趣味性仍待试玩反馈。
 
 ## 目录与发布
 
 - `index.html`、`gallery.css`：合集首页。
-- `games/1902/`：接力扫弧运行文件。
+- `games/1902/`、`games/1903/`、`games/1904/`：各游戏运行文件与简要说明。
 - `assets/`：实机截图。
 - `downloads/`：离线试玩包。
 
@@ -33,4 +57,4 @@ GitHub Pages 从 `main` 分支的根目录发布。添加游戏时，将运行�
 
 本仓库公开供试玩与查看源码，尚未授予通用开源许可证。如需将代码或素材用于其他项目，请先联系仓库作者确认。
 
-接力扫弧的画面由程序绘制，音效由 Web Audio 合成，字体使用设备系统字体；运行时不加载第三方素材或服务。
+三款游戏的画面由程序绘制，音效由 Web Audio 合成，字体使用设备系统字体；运行时不加载远程素材或服务。兜弹使用的 Lucide 工具栏图标许可见 [NOTICE.txt](games/1903/NOTICE.txt)；该许可仅覆盖所列第三方图标，不代表整个仓库采用同一许可证。

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161e20">
+  <title>兜弹 · 可试玩 Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="core.js"></script>
+  <script defer src="levels.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <section id="game" class="game" aria-label="兜弹游戏" tabindex="0">
+    <header class="topbar">
+      <div class="brand"><h1>兜弹</h1><span>试玩版</span></div>
+      <div class="top-actions">
+        <button id="tutorial" class="text-button">重看教学</button>
+        <button id="settings" class="icon-button" title="设置" aria-label="设置"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-7M10 20H3M14 2v4M8 10v4M14 18v4"/></svg></button>
+        <button id="pause" class="icon-button" title="暂停" aria-label="暂停"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg></button>
+      </div>
+    </header>
+    <div class="hud">
+      <div><span class="label" id="mode-label">热身 1 / 2</span><strong id="score">不计分</strong></div>
+      <div><span class="label">圆环</span><strong id="progress">0 / 1</strong></div>
+      <div><span class="label" id="time-label">时间</span><strong id="time">不限时</strong></div>
+    </div>
+    <div class="arena-wrap" id="arena-wrap">
+      <div class="arena" id="arena">
+        <canvas id="canvas" aria-label="上方圆环是目标；下方弹带上的把手可以拖动">你的浏览器需要支持 Canvas。</canvas>
+        <div class="arena-label" id="target-label">圆环 · 目标</div>
+        <div id="handle" class="handle" aria-hidden="true"><span>拖动把手</span></div>
+        <div class="floating-feedback" id="floating" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="guide"><span class="step-label" id="guide-label">先试一颗球</span><p id="hint">让球打中上方圆环。拖动下方把手，让球路虚线对准圆环，松手发射。</p></div>
+    <footer class="controls">
+      <div class="capacity"><span>已接</span><div id="slots" aria-label="已接1颗，最多4颗"><i></i><i></i><i></i><i></i></div><b id="ball-count">1 / 4</b></div>
+      <button id="cancel" class="text-button" disabled>取消拖动</button>
+      <button id="primary" class="primary">跳过热身</button>
+    </footer>
+    <div class="overlay" id="overlay" hidden>
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+        <div class="dialog-head"><h2 id="dialog-title"></h2><button id="close-panel" class="icon-button" title="返回游戏" aria-label="返回游戏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+        <div id="dialog-body" class="dialog-body"></div>
+        <div id="dialog-actions" class="dialog-actions"></div>
+      </div>
+    </div>
+  </section>
+  <main class="reading">
+    <section aria-labelledby="how-title">
+      <h2 id="how-title">怎么玩</h2>
+      <ol>
+        <li>让上方的圆环全部亮起。落下的球会被下方弹带接住，最多同时接 4 颗。</li>
+        <li>按住把手拖动，让虚线对准圆环；松手把已接的球一起发射。右键或“取消拖动”可恢复刚才的形状，保留球。</li>
+        <li>每波最多给 8 颗球，用完后仍有圆环没亮，就进入下一波。拿着球等待时，这一波不会提前结束。</li>
+        <li>一次命中 1、2、3、4 个圆环，得 100、250、450、700 分；清完一波再加 100 分。一颗球只能点亮一个环。</li>
+        <li>标准局计时 90 秒，最后只收尾已发出的球。结算后可“重玩这一局”，重试相同的目标和来球顺序。设置中可选不限时练习。</li>
+        <li>键盘也能玩：在游戏区域内按住空格抓住把手，方向键移动，松开空格发射；Shift 细调，Backspace 取消，Esc 暂停。切换式输入可在设置中开启。</li>
+      </ol>
+    </section>
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">这个游戏有什么特点</h2>
+      <ul>
+        <li><strong>接到哪里，就记住哪里。</strong>球会随弹带移动，改变形状也不会把它们挤到中间。</li>
+        <li><strong>一处把手，几条不同的球路。</strong>拖动同一个把手会一起改变所有球的位置和方向；深拉时，轨迹可能交叉。</li>
+        <li><strong>现在放，还是再接一颗？</strong>一发多中得分更高，但接满后，新球会穿过。清波时仍在带上的球可以留给下一波。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

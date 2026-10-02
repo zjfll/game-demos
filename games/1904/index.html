@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171e20">
+  <title>共弦 · 可试玩 Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="game" class="game" tabindex="0" aria-label="共弦游戏区域">
+    <header class="game-header"><div class="brand">共弦 <span>CHORDFLICK</span></div><div class="header-actions"><button id="pause">暂停</button><button id="menu">更多</button></div></header>
+    <div class="hud"><div><span class="label">剩余机会</span><strong id="shots">4 拨</strong></div><div><span class="label">已穿圆环</span><strong id="rings">0 / 12</strong></div><div class="score"><span id="mode" class="label">教学 · 不计成绩</span><strong id="score">0 分</strong></div></div>
+    <div class="arena" id="arena"><canvas id="board" aria-label="三颗带不同符号的珠子和十二个空心圆环，拖动空白处确定共同拉点" tabindex="0"></canvas></div>
+    <div class="prompt" aria-live="polite"><strong id="goal">4 次机会，穿过所有空心圆环。</strong><span id="hint">按住空白处拖动拉点，松手发射；三颗珠都朝远离拉点的方向走。</span></div>
+    <div class="toolbar"><button id="retry">重玩这一盘</button><button id="tutorialAction">跳过教学</button><button id="primary" class="primary">选择拉点</button></div>
+    <div class="save-note" id="saveNote">先试一拨，不计成绩</div>
+    <div class="overlay" id="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="panelTitle"><div class="panel"><header><h2 id="panelTitle"></h2><button id="closePanel">返回游戏</button></header><div id="panelBody" class="panel-body"></div><footer id="panelFooter"></footer></div></div>
+  </section>
+  <main class="reading">
+    <section aria-labelledby="how"><h2 id="how">怎么玩</h2><ol>
+      <li>每盘有 4 次机会。让珠子碰到全部 12 个空心圆环，就能清盘。</li>
+      <li>按住棋盘空白处，拖动共同拉点，松手发射。三颗珠从各自的位置朝远离拉点的方向走；拉得越远越有力，到一定距离后不再变强。</li>
+      <li>空心环碰到就消失，不会挡路。墙和带斜纹的实心圆会反弹，珠子之间会直接穿过。</li>
+      <li>每拨结束后，珠子的停位和已穿的环会保留。没碰到环也用掉一次机会。4 拨用完后可以重玩同一盘，或从六盘中另选。</li>
+      <li>拉点还没松手时，在棋盘外松开、按右键或 Esc 都能取消。键盘可用空格开始瞄准，方向键移动拉点，Shift 细调，再按空格发射。切换式操作可在“更多”里选择。</li>
+      <li>同一拨穿环越多，额外分越多；从环心经过也有加分。完整路线预览可在设置中开启，成绩单独记录。教学不计入成绩。</li>
+    </ol></section>
+    <section aria-labelledby="features"><h2 id="features">这个游戏有什么特点</h2><ul>
+      <li>一个拉点同时改变三颗珠的方向和力度。照顾一条路线时，另外两条也会改变，需要一起看。</li>
+      <li>上一拨留下的停位就是下一拨的起点。可以先把珠子送到另一侧，再处理剩下的环。</li>
+      <li>瞄准没有时间限制，停留多久都不会蓄力。可以慢慢调整，也可以暂停后接着玩。</li>
+    </ul></section>
+    <footer>共弦 · 六盘试玩</footer>
+  </main>
+  <script src="domain.js"></script><script src="boards.js"></script><script src="storage.js"></script><script src="durable.js"></script><script src="view.js"></script><script src="app.js"></script>
+</body>
+</html>
