@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101722"><title>借流 / SLIPLINE · 试玩</title><link rel="stylesheet" href="style.css"></head><body>
+<section class="game" id="game" aria-label="借流游戏" tabindex="0">
+ <header class="top"><div class="brand">借流 <span>SLIPLINE</span></div><div class="top-actions"><span id="modeTag" class="tag">标准</span><button id="pauseBtn">暂停</button><button id="menuBtn">菜单</button></div></header>
+ <div class="hud" aria-live="off"><div><small>生命</small><strong id="hp">● ● ●</strong></div><div><small>送满港口</small><strong id="ports">0 / 6</strong></div><div><small>剩余时间</small><strong id="clock">180 秒</strong></div><div class="secondary"><small>得分</small><strong id="score">0</strong></div></div>
+ <div class="prompt"><span id="hint">在亮起的港口接线，拉开线接圆弹；180秒内送满六港。</span><span id="wireInfo">当前港 · 西港 0 / 36</span></div>
+ <div class="stage" id="stage"><canvas id="arena" aria-label="游戏场地：亮圈为开放港，空心圆弹可接，实心菱针穿线"></canvas><div class="stage-note" id="stageNote">圆弹能接 · 菱针要躲</div></div>
+ <div class="controls" id="controls"><div class="stick-wrap"><div class="stick" id="stick" role="application" aria-label="拖动方向盘移动"><span id="stickKnob"></span></div><small>拖动移动</small></div><button class="primary grip" id="gripBtn">按住接线<small>松手割线</small></button><button class="focus" id="focusBtn">专注<small>按住慢走</small></button><div class="keytips" id="keytips">WASD / 方向键移动<br>空格接线 · Shift 慢走<br>按住 R 半秒重玩</div></div>
+ <div class="overlay" id="overlay"><div class="panel" id="panel" role="dialog" aria-modal="true" aria-label="游戏菜单"></div></div>
+</section>
+<section class="reading" id="how"><div class="section-no">02 / 玩法</div><h2>怎么玩</h2><ol><li>在亮起的港口按住接线，再移动身体拉开线。让空心圆弹碰到线的亮色中段。</li><li>圆弹变成浅色小珠，送到港口才记进度。每港需要36颗，180秒内送满六港获胜；身体被击中三次就结束。</li><li>松手立即割线，丢掉还在路上的珠，已经送达的保留。灰色握柄和港口旁的一小段线接不住圆弹；菱针会穿线，必须躲开。</li><li>桌面默认用 WASD 或方向键移动、空格接线、左 Shift 慢走。手机拖动方向盘，用“接线”和“专注”按钮。可以在设置里改键或改成点按接线。</li><li>暂停后点“继续”，倒数一秒才恢复。失败后“重玩这一局”保留同一局面；“换下一局”会换弹幕方向和港口开放顺序。</li></ol><button class="returnGame">返回游戏</button></section>
+<section class="reading features" id="features"><div class="section-no">03 / 特点</div><h2>这个游戏有什么特点</h2><ul><li>身体就是线的另一端。移动既能扫过圆弹，也会把自己带近危险。</li><li>长线能接更宽的一片弹幕；向港口收线，会把在途珠一起收近，让它们更早送达。</li><li>送满一个港口，只清开港口和刚才那条线附近的危险。清路是一次性的，要趁空隙去接下一个港。</li></ul><p class="footer">借流 / SLIPLINE · 离线试玩</p></section>
+<script src="config.js"></script><script src="build-info.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>

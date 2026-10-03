@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f1e7">
+  <title>兜弹 · Scoop & Snap</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section class="game-section" id="game" tabindex="-1" aria-label="兜弹游戏">
+    <div class="game-shell">
+      <header class="hud">
+        <div class="brand"><h1>兜弹<span class="brand-dot">.</span></h1><span>SCOOP & SNAP</span></div>
+        <div class="stats"><div><span id="time-label">教学</span><strong id="time">不限时</strong></div><div><span>得分</span><strong id="score">0</strong></div><div class="chain-stat"><span>连束</span><strong id="chain">0</strong></div></div>
+      </header>
+      <div class="instruction" aria-live="polite"><span class="step-chip" id="mode-label">试一束</span><div><strong id="hint">把圆形送到左边圆形收口。</strong><p id="subhint">先在「按住这里」处按住，再拖过下面的圆形。</p></div></div>
+      <div class="field-wrap" id="field-wrap">
+        <canvas id="field" tabindex="0" aria-label="游戏场地。按住建立锚点，拖动收集同形，拉到锚点下方后松手。方向键移动光标，空格按住或松开，C取消。"></canvas>
+        <div class="overlay" id="overlay" hidden><div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title"></div></div>
+      </div>
+      <div class="feedback-row"><span id="feedback" aria-live="polite">先练三颗圆形；教学得分不计入正式局。</span><span id="payload">兜里 0 / 6</span></div>
+      <nav class="controls" aria-label="游戏操作">
+        <button id="pause-btn">暂停</button><button id="cancel-btn" disabled>取消本兜</button><button id="settings-btn">设置</button><button class="quiet" id="skip-btn">跳过教学</button>
+      </nav>
+    </div>
+  </section>
+  <section class="reading" id="how"><span class="section-number">01 / 操作</span><h2>怎么玩</h2>
+    <ol>
+      <li>把圆、方、三角送进顶部同形收口。正式局有 90 秒，没有生命值。</li>
+      <li>先在目标下方按住立锚，再拖过粒子。第一颗决定这一兜的形状，最多收六颗；其他形状会穿过。</li>
+      <li>把兜口拉到锚点下方，沿虚线看落点，再松手。整束朝锚点飞，拉得更紧会收窄队形。实心点表示能送达，叉号表示会失手。</li>
+      <li>每颗送达得 10 分；整兜全部送达还有奖励：三颗全中 60 分，六颗全中 210 分，六颗中五颗只有 50 分。</li>
+      <li>拉得太短，或出发队形碰到场地边缘会取消；右键或「取消本兜」也能放回粒子。时间归零时手里的兜会放回，只结算已经飞出的粒子。「重玩这一局」保留相同来流。</li>
+      <li>手机用手指按住拖动。键盘先点场地，方向键移动光标，空格按下/松开切换收兜与发射，C 取消，Esc 暂停。阅读下方说明时游戏自动暂停，返回后点「继续游戏」。</li>
+    </ol>
+  </section>
+  <section class="reading features" id="features"><span class="section-number">02 / 选择</span><h2>这个游戏有什么特点</h2>
+    <ul>
+      <li><strong>起手位置也决定发射方向。</strong>锚点在拖动期间固定，收集路线和最后停下的位置需要一起考虑。</li>
+      <li><strong>多收一颗，也会让队形更宽。</strong>拉紧会收窄队形；多收几颗再送出，或提前送走小群，由你选择。</li>
+      <li><strong>上一束在飞，你可以开始下一兜。</strong>连续送达至少三颗的整束会显示「连束」，但不会增加分数倍数。</li>
+      <li><strong>可以拆开动作比较。</strong>设置里有「仅收集」和「固定发射」实验；它们单独记分，便于亲手比较完整动作是否值得保留。</li>
+    </ul>
+    <p class="page-end">兜弹 / Scoop & Snap · 可试玩原型</p>
+  </section>
+</body>
+</html>

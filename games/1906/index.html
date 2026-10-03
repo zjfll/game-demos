@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3efe4"><title>兜弦 · 接住，拉开，齐放</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="game-shell" id="game" aria-label="兜弦游戏" tabindex="-1">
+      <header class="game-header">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">⌁</span><h1>兜弦</h1><span class="edition">接住 · 拉开 · 齐放</span></div>
+        <nav aria-label="游戏菜单"><button id="pause" disabled>暂停</button><button id="settings">设置</button></nav>
+      </header>
+      <div class="game-body">
+        <div class="hud" aria-label="游戏状态">
+          <span class="mode" id="mode">短教学</span>
+          <span><small>得分</small> <strong id="score">0</strong></span>
+          <span><small id="time-label">进度</small> <strong id="time">接 · 拉 · 放</strong></span>
+          <span class="capacity"><small>袋内</small> <strong id="capacity">0 / 6</strong></span>
+        </div>
+        <div class="field" id="field">
+          <canvas id="board" tabindex="0" role="application" aria-label="上方三道收集槽，下方把手。按住下方接片，拖动调整落点，松手发射。"></canvas>
+          <div id="touch-pad" aria-hidden="true"></div>
+          <div class="field-tag">三道槽 · 实心圆可入槽，叉号偏出</div>
+        </div>
+        <div class="prompt" role="status" aria-live="polite"><strong id="hint">把光片送进上方三道槽。</strong><span id="detail">先按住下方把手接三片，再向下拉开，松手发射。</span></div>
+        <div class="controls"><button class="primary" id="action" disabled>开始接片</button><span id="control-note">也可按住空格，方向键调整</span></div>
+        <div class="game-footer"><span id="storage-status">离线试玩 · 自动保留局面</span><a href="#how">向下看玩法 ↓</a></div>
+        <div class="overlay" id="overlay" hidden><div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title"></div></div>
+      </div>
+    </section>
+    <section class="reading" id="how" tabindex="-1">
+      <span class="section-number">01 / 玩法</span><h2>怎么玩</h2>
+      <ol>
+        <li>按住场地下方接住光片。接住后先别松手，可以继续调整这一袋。</li>
+        <li>左右拖动把手，让整袋落点一起左右移动；向下拖，让落点展开。实心圆表示能进槽，叉号表示偏出。</li>
+        <li>松手发射整袋。也可以点“开始接片”，调整后点“发射”；键盘用空格接片和释放，方向键调整，Shift 慢调。</li>
+        <li>每片命中得 10 分。每多覆盖一道槽加 10 分；一袋至少三片且全中，每片再加 2 分。三片分进三槽是 56 分。</li>
+        <li>一袋最多六片。没接住或满袋穿过的片不能补接，失误不扣已有分数。</li>
+        <li>快玩 90 秒，最后一袋另有 2 秒释放。练习不限时；“同一来流再试”保留这一局的来流顺序。阅读这里时游戏会暂停。</li>
+      </ol>
+    </section>
+    <section class="reading features">
+      <span class="section-number">02 / 特点</span><h2>这个游戏有什么特点</h2>
+      <ul>
+        <li><strong>接的位置会留下来。</strong>挤在一起的片不会自动分开，收哪几片会影响整袋能否同时进槽。</li>
+        <li><strong>一个把手调整整袋。</strong>不能逐片瞄准，需要让同一组落点一起对齐。</li>
+        <li><strong>上一袋飞着，下一袋还能接。</strong>释放后立即归位，可以选择连续小袋，或等更多片一起发。</li>
+      </ul>
+    </section>
+  </main>
+  <script src="core.js"></script><script src="app.js"></script>
+</body>
+</html>

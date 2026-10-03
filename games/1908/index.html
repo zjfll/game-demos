@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eeeade"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2713%27 fill=%27%23233e3b%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%278%27 fill=%27%23fbf4d6%27/%3E%3C/svg%3E"><title>折流 / TURNLINE · 试玩作业台</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main>
+<section id="game" class="game" tabindex="0" aria-label="折流游戏区域">
+ <header class="topbar"><div class="brand"><strong>折流<span> / TURNLINE</span></strong><small id="mode">安全教学 · 不计成绩</small></div><div class="stats" aria-label="当前作业"><b id="progress">教学 0 / 2</b><span id="stock">无伤示例</span><span id="health">耐久 3</span><span id="clock">剩余 180秒</span></div><div class="top-actions"><button id="pause">暂停</button><button id="menu">菜单</button></div></header>
+ <div class="brief"><div><span class="step-label" id="stepLabel">先学一次</span><strong id="objective">正式作业要把8件中的5件送入槽。</strong></div><p id="instruction">你是带缺口的圆形卷线器。先用方向键或下方摇杆，走到场内虚线圈。</p><div id="feedback" aria-live="polite">走位决定线角度，不需要鼠标瞄准。</div></div>
+ <div id="stage" class="stage"><canvas id="board" width="960" height="540" aria-label="作业台：尖楔是来件，横条表示已改道且安全；上、下开口是收件槽。"></canvas></div>
+ <div class="controls"><div class="move-controls"><div id="joystick" role="group" aria-label="移动摇杆"><div class="crosshair"></div><div id="stick"></div><span>移动</span></div><p>WASD / 方向键<span>也可拖动左侧摇杆</span></p></div><div class="action-controls"><button id="anchor" class="primary">按住立锚</button><p id="actionHint">立锚后向旁边走，拉出短线</p></div><div class="key-note"><kbd>Space</kbd> / 场内左键立锚<br><span>松开收线 · Esc 暂停</span></div></div>
+ <div class="bottom-note"><span id="lineInfo">线待命 · 一条线接一件</span><span>下滑可查玩法，作业会暂停 ↓</span></div>
+ <div id="overlay" class="overlay" hidden><div class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><header><h2 id="panelTitle"></h2><button id="closePanel">返回游戏</button></header><div id="panelBody" class="panel-body"></div><footer id="panelActions"></footer></div></div>
+</section>
+<section class="reading" id="how" tabindex="-1"><span class="section-number">02 / 操作</span><h2>怎么玩</h2><ol><li>用方向键、WASD 或摇杆移动圆形卷线器。按住空格、场内左键或“立锚”按钮，再向旁边走，拉出一条线；松开收线。菜单里可改成“按一下立锚，再按收线”。</li><li>等尖楔来件靠近，用短线接住它。身体位置改变线的角度；虚线预览显示按当前角度会往哪儿走。</li><li>把改道后的横条来件送入上方或下方的开口槽。每条线只接一件；线太短不生效，拉得太长或超过0.9秒会收回。</li><li>正式作业有8件，送入5件就完成。损失4件、耐久降到0，或180秒内未达标都会结束；暂停不计时。已经改道的来件不会伤你。</li><li>“重玩这一局”保留原来的来件顺序；“换新配方”改变顺序。安全教学和慢速练习不记正式成绩，菜单可随时重看教学。</li></ol></section>
+<section class="reading features"><span class="section-number">03 / 试玩时留意</span><h2>这个游戏有什么特点</h2><ul><li><strong>同一段移动也在定方向。</strong> 锚留在原地，卷线器走到哪里，线就朝哪里；接住来件时的角度决定它去哪个槽。</li><li><strong>接住只是第一步。</strong> 来件改道后变安全，但不会自动进槽。偏离开口会撞墙损失，让下一次站位和角度更重要。</li><li><strong>来路换了，动作也要换。</strong> 左、右、下三个入口交替送件，锁定后直走。你能先读来路，再选截击地点。</li></ul></section>
+</main><script src="core.js"></script><script src="app.js"></script></body></html>

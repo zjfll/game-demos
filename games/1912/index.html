@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111820"><title>牵流 · 可试玩 Demo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<section id="game" class="game" tabindex="0" aria-label="牵流游戏区域">
+ <header class="hud"><div class="brand">牵流 <span id="modeLabel">入门与挑战</span></div><div class="stats"><span id="hp">生命 3</span><span id="time">剩余 150秒</span><span id="score">分数 0</span></div><button id="pause" class="small">暂停</button><button id="menuSettings" class="small">设置</button></header>
+ <div class="objective"><span id="target">目标：150秒内送满至少5口，并存活</span><span id="progress">当前口 0 / 20</span></div>
+ <div id="hint" class="hint" aria-live="polite">先按住「牵线」留锚，再向右移动拉出导轨。接住的圆珠会从身体前方射出。</div>
+ <div id="stage" class="stage"><canvas id="field" width="1280" height="720" aria-label="移动身体拉出导轨，将弹珠送入白色入口"></canvas>
+  <div id="screen" class="screen"><div id="panel" class="panel"></div></div>
+ </div>
+ <div class="controls" id="controls"><div id="resultControls" class="result-controls" hidden><button class="primary" data-action="retry">重玩这一局</button><button data-action="mirror">换镜像场景</button><button data-action="trace" id="traceButton">查看致伤轨迹</button><button data-action="menu">返回菜单</button></div><div class="dpad" aria-label="触摸方向控制"><button data-dir="up" aria-label="向上移动">↑</button><button data-dir="left" aria-label="向左移动">←</button><button data-dir="down" aria-label="向下移动">↓</button><button data-dir="right" aria-label="向右移动">→</button></div><div class="action-buttons"><button id="rail" class="primary">按住牵线</button><button id="focus">按住精移</button></div><div class="control-copy" id="keys"></div><button id="skip" class="small">跳过教学</button></div>
+ <footer class="game-footer"><span id="status">圆珠能接住；出管后仍危险。白框是当前入口。</span><span id="focusTip">点场地回到游戏</span></footer>
+ <div id="settingsScreen" class="settings-screen" hidden><div class="settings-panel"><div class="settings-top"><strong id="settingsTitle">设置</strong><button id="closeSettings">返回游戏</button></div><div id="settingsBody" class="settings-body"></div></div></div>
+</section>
+<section class="reading" aria-labelledby="how"><h2 id="how">怎么玩</h2><ol><li>挑战持续150秒。送满至少5个入口，并保住生命，才算完成；生命耗尽会提前结束。</li><li>用方向键或 WASD 移动。按住「牵线」留一个固定锚点，再移动身体拉开导轨；手机用下方方向按钮和「牵线」。</li><li>让实线横过圆珠来流，再用走位把出口朝向白色入口。拉开不足64时还不能接珠，最长300；身体附近的断开段不保护你。</li><li>只有接过的圆珠实际进入当前入口才算送达：每颗10分，20颗填满一口，另加100分。下一口用虚框预告，满口后的短过渡不再计分。</li><li>松开牵线即可离开旧轨，已接住的圆珠仍会排出。自由圆珠和尖针都能伤人，尖针会穿线；按住「精移」可慢一点调整。</li><li>用「暂停」休息或读说明，再按「继续游戏」。结束后可重玩同一局，也可明确选择镜像场景；设置内可改键、改为点按切换牵线。</li></ol></section>
+<section class="reading features" aria-labelledby="features"><h2 id="features">这个游戏有什么特点</h2><ul><li>身体同时决定接弹范围和出管方向。移动到安全位置时，也会改变这一串圆珠能否送进入口。</li><li>脱手会留下只排空的虚线旧轨。你可以先去布下一条轨，也要避开旧出口排出的圆珠。</li><li>圆珠只有一次墙面反弹，接住也不会恢复次数或寿命。偏离入口的圆珠可能回到场内，成为下一次走位的危险。</li><li>同局重试保留相同发射脚本，难度按时间变化。换镜像会同时翻转入口与来流，可以试着把刚才的办法用到另一边。</li></ul></section>
+<script src="config.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>

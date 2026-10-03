@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>绷线 · BENGXIAN</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<section id="game" class="game" tabindex="0" aria-label="绷线游戏区域">
+ <header class="top"><div class="wordmark">绷线 <span>BENGXIAN</span></div><div class="top-actions"><button id="skip" hidden>跳过练习</button><button id="pause">暂停</button><button id="settings">设置</button></div></header>
+ <div class="hud" aria-label="当前状态"><div><small id="mode">标准挑战</small><strong id="time">剩余 180 秒</strong></div><div><small>生命</small><strong id="hp">● ● ●</strong></div><div><small>已入账</small><strong id="score">0 分</strong></div><div class="cargo"><small>暂存 · 到达才计分</small><strong id="cargo">0/12 · 可收 0 分</strong></div></div>
+ <div class="instruction"><span id="phase">接住 → 收回</span><p id="hint">撑过 180 秒，接弹收线得分。先按住「布线」，再移动白色身体把线拉开。</p></div>
+ <div id="stage" class="stage"><canvas id="arena" width="1280" height="720" aria-label="白色身体、青绿拦截线、琥珀圆弹和珊瑚切线针"></canvas><div class="feedback" id="feedback" aria-live="polite"></div></div>
+ <div class="controls"><div class="desktop-help">移动 <kbd>WASD / ↑↓←→</kbd> <span>精确 <kbd>Shift</kbd></span></div><div class="touch-move"><div id="joystick" class="joystick" aria-label="拖动摇杆移动"><span class="stick"></span><em>移动</em></div></div><div class="action-group"><button id="precision" class="precision">精确移动</button><button id="mainAction" class="primary main-action">按住布线<br><small>松手收回</small></button></div><div class="key-help">主动作 <kbd id="keyLabel">空格 / J</kbd><br>松手回到菱形锚点</div></div>
+ <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><div class="panel"><header class="panel-head"><h1 id="panelTitle"></h1><button id="panelBack" hidden>返回游戏</button></header><div id="panelBody" class="panel-body"></div><footer id="panelActions" class="panel-actions"></footer></div></div>
+</section>
+<main class="reading">
+ <section aria-labelledby="how"><h2 id="how">怎么玩</h2><ol><li>默认按住空格或 J，在当前位置留下菱形锚点；用 WASD 或方向键移动白色身体，把线拉开。手机用左侧摇杆和「布线」按钮。</li><li>青绿实线能接琥珀圆弹，最多暂存 12 颗；线太短时显示虚线，不能接弹。身体碰到圆弹或针会掉一条生命。</li><li>有货时松手，身体回到原锚点，到达才计分。比如收回 1 颗得 10 分，4 颗得 64 分。空线松手只撤线，不移动也不保护身体。</li><li>珊瑚色尖针会切断线，丢掉这一串暂存；满载双轨线也会被切。看到针的虚线预告，可以改角或及时收回。</li><li>正式挑战持续 180 秒，最后 6 秒不再新增危险。生命用完就结束；时间到而未开始收回的货物会丢失。结束后可重玩同一局面，或换一个局面。</li></ol></section>
+ <section aria-labelledby="features"><h2 id="features">这个游戏有什么特点</h2><ul><li>锚点由你自己放。接弹的位置和收线后的落点一起确定，所以移动前也要看一眼准备回去的地方。</li><li>一串接得越多，每颗平均得分越高；但满 12 颗后圆弹会穿过线。可以早点收小串，也可以冒险继续接。</li><li>扇形来弹和切线针在预告时瞄准，发射后不再追踪。预告后移动或改变线的角度，可以让它们飞过旧位置。</li></ul></section>
+ <p class="reading-footer">绷线 · 本地试玩版　<span>随时回到上方继续，阅读时游戏会暂停。</span></p>
+</main>
+<script src="data.js"></script><script src="engine.js"></script><script src="ui.js"></script>
+</body></html>

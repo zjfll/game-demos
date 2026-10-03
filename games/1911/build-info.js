@@ -1,0 +1,1 @@
+globalThis.SLIPLINE_BUILD={"version":"1911-html-0.1","build_hash":"031fb86ab0d70b390d6af57b2b733f5b02019c3840fd1cca183b5c52ce719f3a","config_hash":"fe2874425c130fd3ed2928139fd84eef556f738c1bb2fd0ae2256c43328a1505"};

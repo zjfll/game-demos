@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#edf2ef">
+  <title>换轴破阵 · Pivot Break</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section id="game" class="game" tabindex="0" aria-label="换轴破阵游戏">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">⦿</span><div><h1>换轴破阵</h1><span>PIVOT BREAK / 试验台 01</span></div></div>
+      <div class="tools"><button id="pause" aria-label="暂停游戏">暂停</button><button id="menu" aria-label="打开设置与选台">菜单</button></div>
+    </header>
+    <div class="hud"><strong id="objective">拆掉 3 个封锁器，再整杆进入出口</strong><span id="health" aria-label="剩余生命">生命 3 / 3</span></div>
+    <div id="stage" class="stage">
+      <canvas id="board" width="1280" height="720" aria-label="机械试验台：双端杆、封锁器与危险落点"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="panel" id="panel"></div>
+      </div>
+      <span id="fieldTag" class="field-tag">开阔台 · 固定局面</span>
+      <span id="impactLabel" class="impact-label" aria-live="polite"></span>
+    </div>
+    <div class="guidance"><span id="stepTag">初次操作</span><p id="hint">按住顺转让空心端摆动，按“换轴”把它踩成新支点；再转动才能向前走。</p><span id="speed">静止</span></div>
+    <div class="controls" aria-label="游戏操作">
+      <button data-action="left" class="turn"><span>↶ 逆转</span><small>A / ← · 按住</small></button>
+      <button data-action="right" class="turn"><span>↷ 顺转</span><small>D / → · 按住</small></button>
+      <button data-action="swap" class="swap"><span>换轴</span><small>空格 · 按一次</small></button>
+      <button data-action="brake" class="brake"><span>制动</span><small>Shift · 按住</small></button>
+    </div>
+    <footer class="game-footer"><span>实心脚印固定 · 空心环摆动</span><span id="focusNote">离开游戏会暂停</span></footer>
+  </section>
+  <section class="reading" id="how" tabindex="0" aria-label="怎么玩，游戏外的阅读区域"><span class="eyebrow">操作备忘</span><h2>怎么玩</h2>
+    <ol>
+      <li>按住“逆转”或“顺转”摆动双端杆。按一次“换轴”，把活动端固定在原地，再转动向前走。</li>
+      <li>用活动端高速撞开三个带数字的封锁器。轻碰只能推；固定端和杆中间不能拆锁。</li>
+      <li>橙色虚线圈是即将落下的钉击；变成实心斜纹时会伤到整根杆。换轴后还要转走，才算离开危险。</li>
+      <li>盾架的厚实弧面会挡住杆。从两侧或背后的缺口高速撞它。需要停稳时按住“制动”。</li>
+      <li>拆完三个封锁器，把整根杆移进蓝色出口。生命用完会失败，可重玩同一局；读说明或离开窗口会暂停。</li>
+    </ol>
+  </section>
+  <section class="reading features"><span class="eyebrow">试玩时可以留意</span><h2>这个游戏有什么特点</h2>
+    <ul>
+      <li>移动和撞击用的是同一条摆动弧线。接近目标时，也要为下一次落脚留出空间。</li>
+      <li>换轴保留转动方向和速度，却不会挪开身体。能否躲开落钉，取决于换轴后的实际摆动。</li>
+      <li>墙和盾面会截住整根杆。正面被挡住时，反向转动或换个支点可以改变进路。</li>
+      <li>被扫开的敌人能再撞开另一个敌人一次。冲力会变弱，不会无限传下去。</li>
+    </ul>
+  </section>
+</main>
+<script src="engine.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

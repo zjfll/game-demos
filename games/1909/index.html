@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>借流 · 可试玩 Demo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<section id="game" tabindex="0" aria-label="借流游戏，方向键移动，空格按住导流">
+ <header class="top"><div class="brand">借流 <span>把危险送到另一端</span></div><div class="top-actions"><button id="tutorialSkip" hidden>跳过教学</button><button id="mute" aria-label="静音">声音 开</button><button id="pause">暂停 / 菜单</button></div></header>
+ <div class="hud" aria-live="off"><div><small id="phaseLabel">3分钟挑战</small><strong id="stageValue">6段 · 4段达标过关</strong></div><div><small>送达 / 本段目标</small><strong id="quotaValue">0 / 18</strong></div><div><small>生命 · 剩余时间</small><strong id="lifeValue">3 · 3:00</strong></div><div class="score-cell"><small>总分</small><strong id="scoreValue">0</strong></div></div>
+ <div id="boardZone"><canvas id="arena" aria-label="白点是你；橙圆可接，粉三角要躲；浅绿边框是接收口"></canvas><div id="toast" role="status"></div></div>
+ <div id="hint"><strong id="hintMain">把橙圆送进浅绿接收口。</strong><span id="hintSub">按住导流，再移动白点拉线；弹从固定端出去。</span></div>
+ <div class="controls"><div class="move-control"><div id="stick" aria-label="拖动方向盘移动白点"><span class="stick-arrows">↑<br>←　→<br>↓</span><i id="thumb"></i></div><span class="keyboard">移动 <b>WASD / 方向键</b></span></div><div class="hold-group"><button id="hold">按住导流</button><small id="holdKey">空格 / Z · 松开撤线</small></div><div class="line-readout"><small>通路线长</small><strong id="lineValue">未放线</strong><span>24–320有效</span></div></div>
+ <div id="overlay" class="overlay"><div id="panel" class="panel" role="dialog" aria-modal="true" aria-label="游戏菜单"></div></div>
+</section>
+<section class="explain" id="how"><span class="section-number">02 / 操作</span><h2>怎么玩</h2><ol>
+ <li>用方向键、WASD 或拖动方向盘移动白点。按住“导流”留下固定端，再移动白点拉出一条线；松开就撤线。</li>
+ <li>用线接橙色圆弹。它变成青色安全点，沿线回到固定端，再向远离你的方向飞出。真正进入浅绿色接收口，每颗才得 100 分。</li>
+ <li>粉色三角会穿过线，要移动躲开。标准挑战有 3 点生命，耗尽就结束；线过长只会断线，需要松开再按。</li>
+ <li>一局 3 分钟，共 6 段。每段前 26 秒接弹，后 4 秒休息；活到最后并完成至少 4 段的送达目标就过关。一串 6 颗全送到另加 300 分，每段首次达标另加 1000 分。</li>
+ <li>暂停后点击“继续这一局”。结束后可以“同局再来”练同一套来流，也可以“换个方向”。教学可跳过；练习可放慢或不死亡，成绩单独标记。</li>
+</ol></section>
+<section class="explain" id="features"><span class="section-number">03 / 选择</span><h2>这个游戏有什么特点</h2><ul>
+ <li>你的走位同时改变拦截线和出口方向。为躲一颗三角而挪动，也可能让下一颗弹偏离接收口。</li>
+ <li>弹离开固定端后保持直线。虚线只显示当前朝向，遇到移动接收口，还要留出飞行的时间。</li>
+ <li>撤线会安全丢弃尚在线上的点，已经飞出的点继续飞。可以放弃眼前几颗，换个位置接下一串。</li>
+ <li>后半局会有两股来流交叉。同一条斜线可以截住两个方向，但身体端的最后一小段不能接弹。</li>
+</ul><p class="page-foot">借流 · JL-D0.1 试玩版</p></section>
+<script src="data.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>
